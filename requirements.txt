@@ -1,0 +1,33 @@
+# Core
+torch>=2.6.0
+transformers>=4.53.3
+accelerate>=1.9.0
+datasets>=3.6.0
+deepspeed>=0.17.2
+peft>=0.15.2
+
+# Tokenization
+sentencepiece>=0.2.0
+tokenizers>=0.21.2
+
+# Numerical
+numpy>=1.26.4
+
+# Utilities
+tqdm>=4.67.1
+pyyaml>=6.0.2
+
+# Evaluation
+evaluate>=0.4.4
+jinja2>=3.1.6
+packaging>=24.2
+huggingface-hub>=0.33.2
+dill>=0.3.8
+sacrebleu>=2.5.1
+rouge-score>=0.1.2
+pandas>=2.0.3
+sqlitedict>=2.1.0
+
+# Data formats
+jsonlines>=4.0.0
+zstandard>=0.23.0

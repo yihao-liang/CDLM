@@ -1,0 +1,22 @@
+task: humaneval_plus
+dataset_path: evalplus/humanevalplus
+unsafe_code: true
+output_type: generate_until
+test_split: test
+doc_to_text: "Write a solution to the following problem and make sure that it passes the tests:\n{{prompt}}\n\nFirst, reason about the solution step-by-step. Then, write the code.\nRespond in the following format:\n<reasoning>\nYour reasoning here\n</reasoning>\n<answer>\n```python\nThe complete implementation of the {{entry_point}} function\n```\n</answer>"
+doc_to_target: "{{test}}\ncheck({{entry_point}})"
+generation_kwargs:
+  until:
+    - "[NO_UNTIL_PLACEHOLDER]"
+  max_gen_toks: 1024
+  do_sample: false
+repeats: 1
+num_fewshot: 0
+filter_list:
+  - name: "create_test"
+    filter:
+      - function: "custom"
+        filter_fn: !function utils.build_predictions
+metadata:
+  version: 1.0
+  description: "HumanEval Plus - extended test cases from evalplus/humanevalplus"
